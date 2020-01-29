@@ -1,99 +1,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Status Dashboard</title>
-  <meta name="description" content="Simple status dashboard">
-  <meta name="author" content="">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-  integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-  crossorigin="anonymous">
-
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script>
-
-  var error = '';
-  var rows = '';
-  window.onload = function() {
-
-  let url = 'https://abhii.apps.dreamfactory.com/api/v2/assignment1/_table/testtable';
-
-
-
-  let config = {
-  headers: {'X-DreamFactory-Api-Key': '36fda24fe5588fa4285ac6c6c2fdfbdb6b6bc9834699774c9bf777f706d05a88'}
-}
-    axios.get(url,config)
-
-    .then(function (response) {
-
-      for (var i= 0; i < response.data.resource.length; i++) {
-        rows += "<tr><td>" + response.data.resource[i].age + "</td><td>" + response.data.resource[i].name + "</td></tr>";
-      }
-      document.getElementById('rows').innerHTML = rows;
-    })
-};
-
-
-</script>
-
-
-<script>
-
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
-
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '492618808300185',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v5.0'
-    });
-
-    FB.AppEvents.logPageView();
-
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-
 </head>
 
 <body>
-  <div id="fb-root">
-    <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div></div>
 <div class="container">
   <a href="https://abhii.apps.dreamfactory.com/api/v2/user/session?service=googleapi"><img src="file:///Users/abhi-macbookpro/Downloads/google_signin_buttons/web/2x/btn_google_signin_light_normal_web@2x.png"></img></a>
-
-
-  <div class="row">
-    <div class="col">
-      <h1>Status Dashboard</h1>
-      <table class="table table-striped table-bordered">
-        <thead class="thead-dark">
-          <th>Age</th>
-          <th>Name</th>
-        </thead>
-        <tbody id="rows">
-        </tbody>
-      </table>
-    </div>
-  </div>
 </div>
-
-<!--Facebook login connector-->
-
 </body>
 </html>
