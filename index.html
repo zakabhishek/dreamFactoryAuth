@@ -1,10 +1,20 @@
 <html>
 <head>
-<link rel="stylesheet" href="style.css"></link>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+<!-- <link rel="stylesheet" href="style.css"></link> -->
+</head>ß
 <body>
+<button class="loginBtn loginBtn--google" onclick="window.location.href='https://abhii.apps.dreamfactory.com/api/v2/user/session?service=googleapi';">
+      Login with Google
+</button>
+
+
+<!--
+<button class="loginBtn loginBtn--facebook" onclick="window.location.href='https://abhii.apps.dreamfactory.com/api/v2/user/session?service=facebookauth';">
+    Login with Facebook
+</button>
+</button> -->
+
+
 
 <script>
 
@@ -63,30 +73,10 @@
 </script>
 
 
-<div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">Sign In</h5>
-            <form class="form-signin">
+//  The JS SDK Login Button
 
-              <button class="btn btn-lg btn-google btn-block text-uppercase" onclick="window.location.href='https://abhii.apps.dreamfactory.com/api/v2/user/session?service=googleapi';">
-                  Sign in with Google
-              </button>
-
-              <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-              <i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook
-              </fb:login-button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
 
 </body>
 </html>
